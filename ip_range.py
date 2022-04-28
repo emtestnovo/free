@@ -64,6 +64,7 @@ def tipo1():
 				if status==101:
 					text.write(f'proxy:{ip}:80\n')
 					print(f'Adicionado proxy a lista {ip}')
+					text.close()
 				if status!=200 or status!=101:
 					text.write(f'{ip}  -> {status} \n')
 					print('=========================================')
