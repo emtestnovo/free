@@ -1,16 +1,10 @@
 import urllib3
 http = urllib3.PoolManager()
 
-# BY M.
 
 print('=========================================')
 print('Precisa estar sem saldo, e sem credito')
 print('=========================================')
-
-
-
-
-
 
 
 def dominio_status(dominio,ip,porta):	
@@ -64,10 +58,15 @@ def tipo1():
 				status=dominio_status(dominio,ip,porta)
 				if status==101:
 					text.write(f'proxy:{ip}:80\n')
+                    print('=========================================')
 					print(f'Adicionado proxy a lista {ip}')
+                    print('=========================================')
+                    text.close()
 				if status!=200 or status!=101:
 					text.write(f'{ip}  -> {status} \n')
+                    print('=========================================')
 					print(f'{ip} -> {status}')
+                    print('=========================================')
 			except:
 				print(f'sem resposta do  ip: -> {x}.{x2}')
 				pass
